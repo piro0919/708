@@ -1,0 +1,30 @@
+.wrapper {
+  padding: 0 0 72px;
+}
+
+.list {
+  display: grid;
+  gap: 72px;
+}
+
+.article {
+  display: grid;
+  gap: 16px;
+}
+
+.imageGalleryWrapper {
+  max-width: 1080px;
+}
+
+.imageGallery :global(.image-gallery-thumbnails-container) {
+  text-align: left;
+}
+
+.heading3 {
+  font: 2rem arial, sans-serif;
+}
+
+.textsWrapper {
+  display: grid;
+  gap: 8px;
+}

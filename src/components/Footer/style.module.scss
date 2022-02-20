@@ -1,0 +1,25 @@
+@import "sass-mq";
+
+.footer {
+  display: flex;
+  font: 1.2rem arial, sans-serif;
+  justify-content: center;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  @include mq($until: tablet) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  @include mq($from: tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.inner {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1080px;
+  width: 100%;
+}

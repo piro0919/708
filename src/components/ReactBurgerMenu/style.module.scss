@@ -1,0 +1,43 @@
+@import "sass-mq";
+
+.wrapper {
+  @include mq($until: tablet) {
+    display: block;
+  }
+  @include mq($from: tablet) {
+    display: none;
+  }
+}
+
+.burgerButton {
+  left: auto;
+  margin: 70px 24px;
+  right: 0;
+  top: 0;
+}
+
+.cross {
+  background: #333;
+}
+
+.list {
+  color: #333;
+  display: flex !important;
+  flex-direction: column;
+  font: 1.8rem arial, sans-serif;
+  gap: 24px;
+}
+
+.menu {
+  top: 0;
+}
+
+.menu2 {
+  background: #fff;
+}
+
+.overlay {
+  background: rgb(0 0 0 / 85%) !important;
+  left: 0;
+  top: 0;
+}
