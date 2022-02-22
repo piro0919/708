@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import { GetStaticProps } from "next";
-import { useMemo, useState } from "react";
+import noScroll from "no-scroll";
+import { useEffect, useMemo, useState } from "react";
 import Lightbox from "react-image-lightbox";
 import GalleryTop, { GalleryTopProps } from "components/GalleryTop";
 import Seo from "components/Seo";
@@ -21,6 +22,16 @@ function Gallery({ images: propImages }: GalleryProps): JSX.Element {
       })),
     [propImages]
   );
+
+  useEffect(() => {
+    if (typeof photoIndex === "number") {
+      noScroll.on();
+
+      return;
+    }
+
+    noScroll.off();
+  }, [photoIndex]);
 
   return (
     <>

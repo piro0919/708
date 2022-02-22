@@ -29,7 +29,12 @@
   padding: 24px;
   position: fixed;
   right: 0;
-  top: 0;
+  @include mq($until: tablet) {
+    bottom: 0;
+  }
+  @include mq($from: tablet) {
+    top: 0;
+  }
 }
 
 .menuWrapper {

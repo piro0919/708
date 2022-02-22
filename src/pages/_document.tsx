@@ -23,6 +23,16 @@ class MyDocument extends Document {
           <style>{`body::before { display: ${
             process.env.NODE_ENV === "production" ? "none" : "block"
           } }`}</style>
+          <link href="https://fonts.googleapis.com" rel="preconnect" />
+          <link
+            crossOrigin=""
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Raleway:wght@300&family=Zen+Maru+Gothic&display=optional"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
