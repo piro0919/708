@@ -1,0 +1,23 @@
+.wrapper {
+  padding: 72px 0;
+}
+
+.container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100%;
+}
+
+.row {
+  margin: -24px 0 0;
+}
+
+.col {
+  margin: 24px 0 0;
+}
+
+.imageWrapper {
+  aspect-ratio: 1;
+  cursor: pointer;
+  position: relative;
+}

@@ -1,5 +1,6 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Document } from "@contentful/rich-text-types";
 import { useWindowWidth } from "@react-hook/window-size";
-import ReactHtmlParser from "react-html-parser";
 import ImageGallery from "react-image-gallery";
 import useBreakpoint from "use-breakpoint";
 import styles from "./style.module.scss";
@@ -8,7 +9,7 @@ import Article from "components/Article";
 const BREAKPOINTS = { desktop: 980, mobile: 375, tablet: 740, wide: 1300 };
 
 type Work = {
-  description: string;
+  description: Document;
   images: string[];
   title: string;
 };
@@ -46,16 +47,13 @@ function WorksTop({ works }: WorksTopProps): JSX.Element {
                       original: image,
                       thumbnail: image,
                     }))}
-                    showFullscreenButton={false}
+                    showFullscreenButton={true}
                     showPlayButton={false}
                   />
                 </div>
                 <div className={styles.textsWrapper}>
                   <h3 className={styles.heading3}>{title}</h3>
-                  {
-                    // eslint-disable-next-line new-cap
-                    ReactHtmlParser(description)
-                  }
+                  <div>{documentToReactComponents(description)}</div>
                 </div>
               </article>
             </li>

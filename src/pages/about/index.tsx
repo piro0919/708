@@ -1,4 +1,4 @@
-import { createClient, MicroCMSDate } from "microcms-js-sdk";
+import { createClient } from "contentful";
 import { GetStaticProps } from "next";
 import AboutTop, { AboutTopProps } from "components/AboutTop";
 import Seo from "components/Seo";
@@ -16,22 +16,29 @@ function About({ profile }: AboutProps): JSX.Element {
 
 export const getStaticProps: GetStaticProps<AboutProps> = async () => {
   const client = createClient({
-    apiKey: process.env.MICRO_CMS_API_KEY || "",
-    serviceDomain: process.env.MICRO_CMS_SERVICE_DOMAIN || "",
+    accessToken: process.env.CONTENTFUL_DELIVERY_API_ACCESS_TOKEN || "",
+    environment: process.env.CONTENTFUL_ENVIRONMENT,
+    space: process.env.CONTENTFUL_SPACE_ID || "",
   });
   const { profile } = await client
-    .get<MicroCMSDate & MicroCMS.About>({
-      endpoint: "about",
+    .getEntries<Contentful.IAboutFields>({
+      content_type: "about" as Contentful.CONTENT_TYPE,
     })
-    .then(({ profile }) => ({
-      profile,
-    }));
+    .then(({ items }) => {
+      const {
+        fields: { profile },
+      } = items[0];
+
+      return {
+        profile,
+      };
+    });
 
   return {
     props: {
       profile,
     },
-    revalidate: 60 * 60 * 6,
+    revalidate: 60 * 60 * 1,
   };
 };
 

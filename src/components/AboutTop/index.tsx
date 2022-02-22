@@ -1,19 +1,17 @@
-import ReactHtmlParser from "react-html-parser";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Document } from "@contentful/rich-text-types";
 import styles from "./style.module.scss";
 import Article from "components/Article";
 
 export type AboutTopProps = {
-  profile: string;
+  profile: Document;
 };
 
 function AboutTop({ profile }: AboutTopProps): JSX.Element {
   return (
     <div className={styles.wrapper}>
       <Article heading="ABOUT">
-        {
-          // eslint-disable-next-line new-cap
-          ReactHtmlParser(profile)
-        }
+        <div>{documentToReactComponents(profile)}</div>
       </Article>
     </div>
   );

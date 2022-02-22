@@ -1,4 +1,4 @@
-import { createClient, MicroCMSListResponse } from "microcms-js-sdk";
+import { createClient } from "contentful";
 import { GetStaticProps } from "next";
 import Seo from "components/Seo";
 import WorksTop, { WorksTopProps } from "components/WorksTop";
@@ -16,29 +16,33 @@ function Works({ works }: WorksProps): JSX.Element {
 
 export const getStaticProps: GetStaticProps<WorksProps> = async () => {
   const client = createClient({
-    apiKey: process.env.MICRO_CMS_API_KEY || "",
-    serviceDomain: process.env.MICRO_CMS_SERVICE_DOMAIN || "",
+    accessToken: process.env.CONTENTFUL_DELIVERY_API_ACCESS_TOKEN || "",
+    environment: process.env.CONTENTFUL_ENVIRONMENT,
+    space: process.env.CONTENTFUL_SPACE_ID || "",
   });
   const { works } = await client
-    .get<MicroCMSListResponse<MicroCMS.Work>>({
-      endpoint: "works",
-      queries: { limit: 6 },
+    .getEntries<Contentful.IWorksFields>({
+      content_type: "works" as Contentful.CONTENT_TYPE,
     })
-    .then(({ contents }) => ({
-      works: contents.map(({ description, illustrations, title }) => {
-        return {
-          description,
-          title,
-          images: illustrations.map(({ image: { url } }) => `${url}?w=1080`),
-        };
-      }),
+    .then(({ items }) => ({
+      works: items.map(({ fields: { description, images, title } }) => ({
+        description,
+        title,
+        images: images.map(
+          ({
+            fields: {
+              file: { url },
+            },
+          }) => url
+        ),
+      })),
     }));
 
   return {
     props: {
       works,
     },
-    revalidate: 60 * 60 * 6,
+    revalidate: 60 * 60 * 1,
   };
 };
 
