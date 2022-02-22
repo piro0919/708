@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Zen+Maru+Gothic&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Princess+Sofia&display=optional");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Zen+Maru+Gothic&display=optional");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=optional");
 
 html {
   font-size: 62.5%;
@@ -9,7 +9,8 @@ html {
 
 body {
   color: #333;
-  font: 1.6rem "Zen Maru Gothic", sans-serif;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1.6rem;
   letter-spacing: 1px;
   line-height: 2;
   overflow: hidden scroll;
