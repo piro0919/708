@@ -30,7 +30,7 @@ class MyDocument extends Document {
             rel="preconnect"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Raleway:wght@300&family=Zen+Maru+Gothic&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Raleway:wght@300&family=Zen+Maru+Gothic&display=swap"
             rel="stylesheet"
           />
         </Head>
