@@ -36,6 +36,17 @@
   overflow: hidden scroll;
 }
 
+.budgetWrapper {
+  align-items: center;
+  display: grid;
+  gap: 8px;
+  grid-template: auto / 240px auto;
+}
+
+.budgetInput {
+  text-align: right;
+}
+
 .buttonWrapper {
   justify-self: center;
 }
