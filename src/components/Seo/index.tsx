@@ -11,7 +11,7 @@ function Seo({ title }: SeoProps): JSX.Element {
       canonical="https://www.nbhyakuhati.com/"
       description="イラストレーター7:08のオフィシャルサイトです。"
       openGraph={{
-        description: "Open Graph Description",
+        description: "イラストレーター7:08のオフィシャルサイトです。",
         images: [
           {
             alt: "7:08",
