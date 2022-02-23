@@ -5,6 +5,7 @@ import noScroll from "no-scroll";
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
 import useOnclickOutside from "react-cool-onclickoutside";
 import { AiOutlineMenu } from "react-icons/ai";
+import { animateScroll as scroll } from "react-scroll";
 import styles from "./style.module.scss";
 import Menu from "components/Menu";
 
@@ -33,6 +34,10 @@ function Layout({ children }: LayoutProps): JSX.Element {
     }
 
     noScroll.off();
+
+    scroll.scrollToTop({
+      duration: 0,
+    });
   }, [isOpen]);
 
   useEffect(() => {
