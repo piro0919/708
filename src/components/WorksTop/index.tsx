@@ -1,6 +1,7 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Document } from "@contentful/rich-text-types";
 import { useWindowWidth } from "@react-hook/window-size";
+import { Dispatch, SetStateAction } from "react";
 import ImageGallery from "react-image-gallery";
 import useBreakpoint from "use-breakpoint";
 import styles from "./style.module.scss";
@@ -15,10 +16,16 @@ type Work = {
 };
 
 export type WorksTopProps = {
+  setImages: Dispatch<SetStateAction<string[] | undefined>>;
+  setPhotoIndex: Dispatch<SetStateAction<number | undefined>>;
   works: Work[];
 };
 
-function WorksTop({ works }: WorksTopProps): JSX.Element {
+function WorksTop({
+  setImages,
+  setPhotoIndex,
+  works,
+}: WorksTopProps): JSX.Element {
   const onlyWidth = useWindowWidth();
   const { breakpoint } = useBreakpoint(BREAKPOINTS);
 
@@ -47,7 +54,17 @@ function WorksTop({ works }: WorksTopProps): JSX.Element {
                       original: image,
                       thumbnail: image,
                     }))}
-                    showFullscreenButton={true}
+                    onClick={({ target }): void => {
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      const src = (target as any).src;
+                      const index = images.findIndex((image) =>
+                        (src as string).endsWith(image)
+                      );
+
+                      setImages(images);
+                      setPhotoIndex(index);
+                    }}
+                    showFullscreenButton={false}
                     showPlayButton={false}
                   />
                 </div>

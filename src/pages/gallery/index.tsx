@@ -2,8 +2,8 @@ import { createClient } from "contentful";
 import { GetStaticProps } from "next";
 import noScroll from "no-scroll";
 import { useEffect, useMemo, useState } from "react";
-import Lightbox from "react-image-lightbox";
 import GalleryTop, { GalleryTopProps } from "components/GalleryTop";
+import Lightbox from "components/Lightbox";
 import Seo from "components/Seo";
 
 export type GalleryProps = {
@@ -39,21 +39,9 @@ function Gallery({ images: propImages }: GalleryProps): JSX.Element {
       <GalleryTop images={images} />
       {typeof photoIndex === "number" ? (
         <Lightbox
-          enableZoom={false}
-          mainSrc={propImages[photoIndex]}
-          nextSrc={propImages[(photoIndex + 1) % propImages.length]}
-          onCloseRequest={(): void => setPhotoIndex(undefined)}
-          onMoveNextRequest={(): void =>
-            setPhotoIndex((photoIndex + 1) % propImages.length)
-          }
-          onMovePrevRequest={(): void =>
-            setPhotoIndex(
-              (photoIndex + propImages.length - 1) % propImages.length
-            )
-          }
-          prevSrc={
-            propImages[(photoIndex + propImages.length - 1) % propImages.length]
-          }
+          images={propImages}
+          photoIndex={photoIndex}
+          setPhotoIndex={setPhotoIndex}
         />
       ) : null}
     </>

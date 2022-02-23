@@ -1,15 +1,50 @@
 import { createClient } from "contentful";
 import { GetStaticProps } from "next";
+import noScroll from "no-scroll";
+import { useEffect, useState } from "react";
+import Lightbox, { LightboxProps } from "components/Lightbox";
 import Seo from "components/Seo";
 import WorksTop, { WorksTopProps } from "components/WorksTop";
 
 export type WorksProps = Pick<WorksTopProps, "works">;
 
 function Works({ works }: WorksProps): JSX.Element {
+  const [images, setImages] = useState<LightboxProps["images"]>();
+  const [photoIndex, setPhotoIndex] = useState<number>();
+
+  useEffect(() => {
+    if (typeof photoIndex === "number") {
+      noScroll.on();
+
+      return;
+    }
+
+    noScroll.off();
+  }, [photoIndex]);
+
+  useEffect(() => {
+    if (typeof photoIndex !== "undefined") {
+      return;
+    }
+
+    setPhotoIndex(undefined);
+  }, [photoIndex]);
+
   return (
     <>
       <Seo title="WORKS" />
-      <WorksTop works={works} />
+      <WorksTop
+        setImages={setImages}
+        setPhotoIndex={setPhotoIndex}
+        works={works}
+      />
+      {Array.isArray(images) && typeof photoIndex === "number" ? (
+        <Lightbox
+          images={images}
+          photoIndex={photoIndex}
+          setPhotoIndex={setPhotoIndex}
+        />
+      ) : null}
     </>
   );
 }
