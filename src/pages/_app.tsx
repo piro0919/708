@@ -1,5 +1,4 @@
-import "../styles/breakpoints.scss";
-import "../styles/globals.scss";
+import "styles/globals.scss";
 import "react-image-gallery/styles/css/image-gallery.css";
 import "react-image-lightbox/style.css";
 import "ress";
@@ -8,6 +7,10 @@ import Head from "next/head";
 import { setConfiguration } from "react-grid-system";
 import { Toaster } from "react-hot-toast";
 import Layout from "components/Layout";
+
+if (process.env.NODE_ENV !== "production") {
+  require("styles/mq-settings.scss");
+}
 
 setConfiguration({ breakpoints: [375, 740, 980, 1300] });
 

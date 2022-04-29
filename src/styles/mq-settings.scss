@@ -1,0 +1,8 @@
+@use "styles/breakpoints" as *;
+
+$show-breakpoints: (mobile, tablet, desktop, wide);
+
+@use "sass-mq" with (
+  $breakpoints: $breakpoints,
+  $show-breakpoints: $show-breakpoints
+);
