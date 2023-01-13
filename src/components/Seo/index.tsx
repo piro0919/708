@@ -15,10 +15,10 @@ function Seo({ title }: SeoProps): JSX.Element {
         images: [
           {
             alt: "7:08",
-            height: 800,
-            type: "image/jpeg",
-            url: "https://www.nbhyakuhati.com/og-image-01.jpg",
-            width: 1528,
+            height: 630,
+            type: "image/png",
+            url: "https://www.nbhyakuhati.com/og-image-01.png",
+            width: 1200,
           },
         ],
         site_name: "イラストレーター 7:08 オフィシャルサイト",
