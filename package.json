@@ -28,8 +28,8 @@
     "use-breakpoint": "3.1.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "16.3.0",
-    "@commitlint/config-conventional": "16.2.4",
+    "@commitlint/cli": "18.2.0",
+    "@commitlint/config-conventional": "18.1.0",
     "@contentful/rich-text-types": "15.15.1",
     "@types/no-scroll": "2.1.0",
     "@types/node": "17.0.45",
