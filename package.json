@@ -30,7 +30,7 @@
   "devDependencies": {
     "@commitlint/cli": "16.3.0",
     "@commitlint/config-conventional": "16.2.4",
-    "@contentful/rich-text-types": "15.15.1",
+    "@contentful/rich-text-types": "16.3.0",
     "@types/no-scroll": "2.1.1",
     "@types/node": "17.0.45",
     "@types/nodemailer": "6.4.13",
