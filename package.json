@@ -52,7 +52,7 @@
     "@uphold/commitlint-config": "1.1.1",
     "commitlint-plugin-tense": "1.0.2",
     "custom-border-mixin": "1.2.5",
-    "eslint": "8.56.0",
+    "eslint": "10.2.1",
     "eslint-config-google": "0.14.0",
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "10.0.1",
