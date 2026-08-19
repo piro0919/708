@@ -5,14 +5,18 @@ import client from "@/lib/client";
 import defaultMetadata from "@/lib/defaultMetadata";
 
 const title = "ABOUT";
+const description =
+  "イラストレーター7:08のプロフィールです。経歴と、お仕事のご依頼にあたっての情報を掲載しています。";
 const url = "/about";
 
 export const metadata: Metadata = {
   alternates: {
     canonical: url,
   },
+  description,
   openGraph: {
     ...defaultMetadata.openGraph,
+    description,
     title,
     type: "article",
     url,
@@ -20,6 +24,7 @@ export const metadata: Metadata = {
   title,
   twitter: {
     ...defaultMetadata.twitter,
+    description,
     title,
   },
 };
