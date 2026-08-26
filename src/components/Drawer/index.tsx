@@ -4,7 +4,7 @@ import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 import { Righteous } from "next/font/google";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ComponentProps, useEffect } from "react";
+import { ComponentProps, type JSX, useEffect } from "react";
 import ReactModernDrawer from "react-modern-drawer";
 import styles from "./style.module.scss";
 

@@ -1,9 +1,10 @@
 const path = require("path");
 
+// next lint was removed in Next 16; call eslint directly.
 const buildEslintCommand = (filenames) =>
-  `next lint --fix --file ${filenames
+  `eslint --fix ${filenames
     .map((f) => path.relative(process.cwd(), f))
-    .join(" --file ")}`;
+    .join(" ")}`;
 
 module.exports = {
   "*": "prettier --ignore-unknown --write",

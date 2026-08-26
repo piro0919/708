@@ -3,7 +3,7 @@ import arrayShuffle from "array-shuffle";
 import { motion } from "framer-motion";
 import { M_PLUS_1 as MPlus1 } from "next/font/google";
 import Image from "next/image";
-import { useMemo } from "react";
+import { type JSX, useMemo } from "react";
 import Spacer from "react-spacer";
 import styles from "./style.module.scss";
 import useRenderdStore from "@/hooks/useRenderdStore";

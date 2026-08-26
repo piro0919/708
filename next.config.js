@@ -18,7 +18,7 @@ const nextConfig = {
 
       return "@use 'styles/mq' as mq;" + content;
     },
-    includePaths: [path.join(__dirname, "src")],
+    loadPaths: [path.join(__dirname, "src")],
   },
 };
 

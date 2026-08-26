@@ -6,7 +6,7 @@ import { Righteous } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ReactNode, useEffect, useMemo, useState } from "react";
+import { type JSX, ReactNode, useEffect, useMemo, useState } from "react";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { ToastContainer } from "react-toastify";
 import useBreakpoint from "use-breakpoint";

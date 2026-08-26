@@ -1,5 +1,6 @@
 import { MicroCMSDate } from "microcms-js-sdk";
 import { Metadata } from "next";
+import type { JSX } from "react";
 import About from "@/components/About";
 import client from "@/lib/client";
 import defaultMetadata from "@/lib/defaultMetadata";

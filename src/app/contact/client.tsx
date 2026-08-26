@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-import { useCallback } from "react";
+import { type JSX, useCallback } from "react";
 import { toast } from "react-toastify";
 import Contact, { ContactProps } from "@/components/Contact";
 

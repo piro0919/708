@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import type { JSX } from "react";
 import { SocialIcon } from "react-social-icons";
 import styles from "./style.module.scss";
 

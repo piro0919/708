@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import queryString from "query-string";
+import type { JSX } from "react";
 import Fubumikuji from "@/components/Fubumikuji";
 import defaultMetadata from "@/lib/defaultMetadata";
 
@@ -8,14 +9,17 @@ const title = "フブみくじ";
 const url = "/fubumikuji";
 
 export type PageProps = {
-  params: { year: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ year: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export function generateMetadata({
-  params: { year },
-  searchParams: { result },
-}: PageProps): Metadata {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: PageProps): Promise<Metadata> {
+  const { year } = await params;
+  const { result } = await searchParams;
+
   return typeof result === "string"
     ? {
         alternates: {
@@ -60,10 +64,12 @@ export function generateMetadata({
       };
 }
 
-export default function Page({
-  params: { year: paramYear },
-  searchParams: { result },
-}: PageProps): JSX.Element {
+export default async function Page({
+  params,
+  searchParams,
+}: PageProps): Promise<JSX.Element> {
+  const { year: paramYear } = await params;
+  const { result } = await searchParams;
   const year = parseInt(paramYear, 10);
 
   if (

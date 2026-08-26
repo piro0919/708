@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { type JSX, useMemo, useState } from "react";
 import { useCounter } from "usehooks-ts";
 import Lightbox from "yet-another-react-lightbox";
 import styles from "./style.module.scss";

@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { type JSX, useMemo, useState } from "react";
 import { CgExternal } from "react-icons/cg";
 import ImageGallery from "react-image-gallery";
 import { useCounter } from "usehooks-ts";

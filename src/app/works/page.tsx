@@ -1,5 +1,6 @@
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import { Metadata } from "next";
+import type { JSX } from "react";
 import Works, { WorksProps } from "@/components/Works";
 import client from "@/lib/client";
 import defaultMetadata from "@/lib/defaultMetadata";

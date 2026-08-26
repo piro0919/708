@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import type { JSX } from "react";
 import Client from "./client";
 import defaultMetadata from "@/lib/defaultMetadata";
 

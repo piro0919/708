@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
 import i18next from "i18next";
-import { ReactNode } from "react";
+import { type JSX, ReactNode } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import TextareaAutosize from "react-textarea-autosize";
 import { z } from "zod";

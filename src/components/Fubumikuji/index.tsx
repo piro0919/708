@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useGifController } from "gif-tsx";
 import queryString from "query-string";
-import { useEffect, useRef } from "react";
+import { type JSX, useEffect, useRef } from "react";
 import { Oval } from "react-loader-spinner";
 import { TwitterShareButton } from "react-share";
 import styles from "./style.module.scss";
