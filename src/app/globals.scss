@@ -1,3 +1,5 @@
+@use "../styles/mq" as mq;
+
 html {
   @include mq.mq($until: tablet) {
     font-size: 56.25%;

@@ -1,6 +1,7 @@
 /* stylelint-disable-next-line plugin/sass-render-errors */
-@import "custom-border-mixin";
-@import "@/styles/mixin";
+@use "custom-border-mixin" as *;
+@use "../../styles/mixin" as *;
+@use "../../styles/mq" as mq;
 
 .h2 {
   height: 1px;

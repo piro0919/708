@@ -12,9 +12,14 @@ import "react-toastify/dist/ReactToastify.css";
 import "ress";
 import "yet-another-react-lightbox/styles.css";
 import "./globals.scss";
-import "./mq-settings.scss";
 import Layout from "@/components/Layout";
 import defaultMetadata from "@/lib/defaultMetadata";
+
+// sass-mq のブレークポイント表示は開発時だけ読む。以前は next.config.js の
+// additionalData がこのファイルを本番で空にしていたが、それは Turbopack では動かない。
+if (process.env.NODE_ENV !== "production") {
+  require("./mq-settings.scss");
+}
 
 const notoSansJP = NotoSansJP({ subsets: ["latin"], weight: "900" });
 const url = "https://www.nbhyakuhati.com";

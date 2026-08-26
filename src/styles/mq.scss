@@ -1,6 +1,6 @@
-/* stylelint-disable-next-line plugin/sass-render-errors */
-@use "app/breakpoints" as *;
+@use "../app/breakpoints" as *;
 
+/* stylelint-disable-next-line plugin/sass-render-errors */
 @forward "sass-mq" with (
   $breakpoints: $breakpoints
 );
