@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP as NotoSansJP } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "pattern.css";
-import "react-image-gallery/styles/scss/image-gallery.scss";
+import "react-image-gallery/styles/css/image-gallery.css";
 import "react-modern-drawer/dist/index.css";
 import "react-toastify/dist/ReactToastify.css";
 import "ress";
