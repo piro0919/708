@@ -42,8 +42,8 @@
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@total-typescript/ts-reset": "0.6.1",
-    "@types/node": "^22.20.1",
-    "@types/nodemailer": "6.4.24",
+    "@types/node": "^24.13.3",
+    "@types/nodemailer": "8.0.1",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
     "@types/react-image-gallery": "1.2.4",
@@ -80,7 +80,7 @@
     "stylelint-declaration-block-no-ignored-properties": "2.8.0",
     "stylelint-order": "6.0.4",
     "stylelint-sass-render-errors": "4.1.3",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   },
   "name": "708_3",
   "overrides": {
