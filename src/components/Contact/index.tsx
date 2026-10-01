@@ -28,6 +28,7 @@ const schema = z.object({
   name: z.string().min(1),
   subject: z.string().min(1),
   text: z.string().min(1),
+  website: z.string(),
 });
 
 type FieldTypes = z.infer<typeof schema>;
@@ -51,6 +52,7 @@ export default function Contact({ onSubmit }: ContactProps): JSX.Element {
       name: "",
       subject: "",
       text: "",
+      website: "",
     },
     resolver: zodResolver(schema),
   });
@@ -250,6 +252,26 @@ export default function Contact({ onSubmit }: ContactProps): JSX.Element {
                       </dd>
                     </div>
                   </dl>
+                  {/* ボット除けの囮。人には見えず、読み上げにも乗らない */}
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      height: 1,
+                      left: -9999,
+                      overflow: "hidden",
+                      position: "absolute",
+                      width: 1,
+                    }}
+                  >
+                    <label>
+                      Website
+                      <input
+                        {...register("website")}
+                        autoComplete="off"
+                        tabIndex={-1}
+                      />
+                    </label>
+                  </div>
                   <div className={styles.formFooter}>
                     <button className={styles.button} type="submit">
                       送信する
