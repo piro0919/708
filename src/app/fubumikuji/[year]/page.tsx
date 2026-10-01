@@ -23,8 +23,8 @@ export async function generateMetadata({
   return typeof result === "string"
     ? {
         alternates: {
-          canonical: queryString.stringify({
-            result,
+          canonical: queryString.stringifyUrl({
+            query: { result },
             url: `${url}/${year}`,
           }),
         },
@@ -35,8 +35,8 @@ export async function generateMetadata({
           ],
           title: `${title}${year}`,
           type: "article",
-          url: queryString.stringify({
-            result,
+          url: queryString.stringifyUrl({
+            query: { result },
             url: `${url}/${year}`,
           }),
         },
