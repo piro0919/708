@@ -37,12 +37,12 @@ export default function Gallery({ images }: GalleryProps): JSX.Element {
               ease: "backOut",
             }}
           >
+            {/* 全枚の読み込みを待ってから一斉に出す演出なので、遅延読み込みにはしない */}
             <Image
-              alt={`${url}?h=360&w=360&fit=min`}
+              alt={`7:08のイラスト ${index + 1}`}
               fill={true}
               loading="eager"
               onLoad={increment}
-              quality={100}
               src={`${url}?h=360&w=360&fit=min`}
             />
           </motion.div>
@@ -71,7 +71,10 @@ export default function Gallery({ images }: GalleryProps): JSX.Element {
         }}
         index={index}
         open={typeof index === "number"}
-        slides={images.map(({ url }) => ({ src: url }))}
+        slides={images.map(({ url }, index) => ({
+          alt: `7:08のイラスト ${index + 1}`,
+          src: url,
+        }))}
         styles={{
           container: {
             backdropFilter: "blur(2px)",
