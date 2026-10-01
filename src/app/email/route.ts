@@ -1,7 +1,22 @@
-import dayjs from "dayjs";
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { z } from "zod";
+
+// フォームは日本時間の0時を送ってくる。サーバーは UTC で動くので、そのまま
+// 書式にすると前日の日付になる。日本時間で読み直してから書く。
+const jstDate = new Intl.DateTimeFormat("ja-JP", {
+  day: "2-digit",
+  month: "2-digit",
+  timeZone: "Asia/Tokyo",
+  year: "numeric",
+});
+
+function formatJstDate(date: Date): string {
+  const part = (type: Intl.DateTimeFormatPartTypes): string =>
+    jstDate.formatToParts(date).find((p) => p.type === type)?.value ?? "";
+
+  return `${part("year")}年${part("month")}月${part("day")}日`;
+}
 
 // 改行を許すとメールヘッダーへ別の行を差し込まれる。1行で済む欄では弾く。
 const singleLine = /^[^\r\n]*$/;
@@ -65,9 +80,9 @@ export async function POST(
         name: [name, companyName].filter((v) => !!v).join(" - "),
       },
       subject: `【7:08 オフィシャルサイト】${subject}`,
-      text: `${text}\n\n予算：${budget.toLocaleString()}円\n納期：${dayjs(
+      text: `${text}\n\n予算：${budget.toLocaleString()}円\n納期：${formatJstDate(
         deadline,
-      ).format("YYYY年MM月DD日")}`,
+      )}`,
       to: process.env.NODEMAILER_AUTH_USER,
     });
   } catch (error) {
