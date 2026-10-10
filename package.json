@@ -8,10 +8,10 @@
     "array-shuffle": "3.0.0",
     "axios": "1.20.0",
     "dayjs": "1.11.23",
-    "motion": "12.43.0",
     "gif-tsx": "0.1.5",
     "i18next": "24.2.3",
     "microcms-js-sdk": "3.5.1",
+    "motion": "12.43.0",
     "next": "16.4.0",
     "nextjs-toploader": "3.9.17",
     "nodemailer": "6.10.1",
@@ -41,20 +41,22 @@
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
+    "@eslint/compat": "2.1.1",
+    "@eslint/eslintrc": "3.3.7",
+    "@eslint/js": "9.39.5",
+    "@piro0919/eslint-config": "github:piro0919/eslint-config#v1.0.0",
     "@total-typescript/ts-reset": "0.6.1",
     "@types/node": "^22.20.5",
     "@types/nodemailer": "6.4.24",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@types/react-image-gallery": "1.2.4",
-    "@typescript-eslint/eslint-plugin": "6.21.0",
-    "@typescript-eslint/parser": "6.21.0",
     "@uphold/commitlint-config": "1.1.1",
     "commitlint-plugin-tense": "1.0.10",
     "custom-border-mixin": "1.2.5",
-    "eslint": "8.57.1",
+    "eslint": "9.39.5",
     "eslint-config-google": "0.14.0",
-    "eslint-config-next": "14.2.35",
+    "eslint-config-next": "16.4.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-config-standard": "17.1.0",
     "eslint-plugin-ext": "0.1.0",
@@ -80,23 +82,16 @@
     "stylelint-declaration-block-no-ignored-properties": "2.8.0",
     "stylelint-order": "6.0.4",
     "stylelint-sass-render-errors": "4.2.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "8.71.1"
   },
   "name": "708_3",
-  "overrides": {
-    "stylelint-css-modules-no-global-scoped-selector": {
-      "stylelint": "$stylelint"
-    },
-    "stylelint-sass-render-errors": {
-      "stylelint": "$stylelint"
-    }
-  },
   "private": true,
   "scripts": {
     "build": "next build --webpack",
     "dev": "next dev --webpack",
-    "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "lint:style": "stylelint --fix '**/*.scss'",
     "postbuild": "next-sitemap",
     "prepare": "npx husky install",
@@ -105,5 +100,19 @@
     "stylelint-check": "stylelint-config-prettier-scss-check",
     "type-check": "tsc --noemit"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "overrides": {
+    "eslint-config-standard": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-typescript-sort-keys": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/experimental-utils": {
+      "eslint": "$eslint"
+    },
+    "stylelint-css-modules-no-global-scoped-selector": {
+      "stylelint": "$stylelint"
+    }
+  }
 }
