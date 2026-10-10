@@ -57,7 +57,7 @@ export default function Works({ works }: WorksProps): JSX.Element {
             <ImageGallery
               items={images.map(({ url }, imageIndex) => ({
                 original: url,
-                renderItem: ({ original }) => (
+                renderItem: ({ original }): JSX.Element => (
                   <div
                     className={styles.imageBlock}
                     onClick={() => {
@@ -75,7 +75,7 @@ export default function Works({ works }: WorksProps): JSX.Element {
                     />
                   </div>
                 ),
-                renderThumbInner: ({ original }) => (
+                renderThumbInner: ({ original }): JSX.Element => (
                   <div className={styles.imageBlock}>
                     <Image
                       alt={`${original}?h=60&w=100&fit=min`}
