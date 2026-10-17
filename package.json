@@ -10,7 +10,7 @@
     "dayjs": "1.11.23",
     "gif-tsx": "0.1.5",
     "i18next": "24.2.3",
-    "microcms-js-sdk": "3.5.1",
+    "microcms-js-sdk": "3.6.0",
     "motion": "12.43.0",
     "next": "16.4.0",
     "nextjs-toploader": "3.9.17",
