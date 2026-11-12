@@ -1,4 +1,4 @@
-// eslint-disable-next-line filenames/match-exported
+/* eslint-disable filenames/match-exported */
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import type { Metadata } from "next";
