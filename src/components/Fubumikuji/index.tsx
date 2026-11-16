@@ -4,7 +4,7 @@ import { useGifController } from "gif-tsx";
 import queryString from "query-string";
 import { type JSX, useEffect, useRef } from "react";
 import { Oval } from "react-loader-spinner";
-import { TwitterShareButton } from "react-share";
+import { XShareButton } from "react-share";
 import styles from "./style.module.scss";
 import fubumikuji from "@/lib/fubumikuji";
 
@@ -92,10 +92,10 @@ export default function Fubumikuji({
                         >
                           おみくじをふる
                         </button>
-                        <TwitterShareButton
+                        <XShareButton
                           className={styles.button}
                           hashtags={["絵フブキ", `フブみくじ${year}`]}
-                          title={`${fubumikuji[year].at(
+                          text={`${fubumikuji[year].at(
                             controller.frameIndex.current +
                               1 -
                               fubumikuji[year].length,
@@ -112,7 +112,7 @@ export default function Fubumikuji({
                           })}
                         >
                           <div className={styles.button}>ツイートする</div>
-                        </TwitterShareButton>
+                        </XShareButton>
                       </>
                     )}
                   </div>
