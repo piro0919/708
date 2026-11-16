@@ -8,8 +8,8 @@ import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import TextareaAutosize from "react-textarea-autosize";
 import { z } from "zod";
 import { zodI18nMap } from "zod-i18n-map";
-import translation from "zod-i18n-map/locales/ja/zod.json";
 import styles from "./style.module.scss";
+import translation from "@/locales/ja/zod.json";
 
 // eslint-disable-next-line no-void
 void i18next.init({
@@ -18,12 +18,12 @@ void i18next.init({
     ja: { zod: translation },
   },
 });
-z.setErrorMap(zodI18nMap);
+z.config({ customError: zodI18nMap });
 
 const schema = z.object({
-  budget: z.coerce.number().min(0),
+  budget: z.coerce.number<number>().min(0),
   companyName: z.string(),
-  deadline: z.coerce.date().min(dayjs().startOf("day").toDate()),
+  deadline: z.coerce.date<Date>().min(dayjs().startOf("day").toDate()),
   email: z.string().email(),
   name: z.string().min(1),
   subject: z.string().min(1),
