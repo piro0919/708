@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@hookform/error-message": "2.0.1",
-    "@hookform/resolvers": "7.0.6",
+    "@hookform/resolvers": "7.0.7",
     "@mpth/react-no-ssr": "1.0.1",
     "@react-hook/previous": "1.0.1",
     "@szhsin/react-menu": "4.5.2",
@@ -9,12 +9,12 @@
     "axios": "1.21.1",
     "dayjs": "1.11.23",
     "gif-tsx": "0.1.5",
-    "i18next": "27.1.1",
+    "i18next": "27.1.5",
     "microcms-js-sdk": "3.6.0",
-    "motion": "14.13.0",
+    "motion": "14.14.0",
     "next": "16.4.6",
     "nextjs-toploader": "3.9.17",
-    "nodemailer": "10.5.0",
+    "nodemailer": "10.6.0",
     "pattern.css": "1.0.0",
     "query-string": "10.0.0",
     "react": "^19.3.1",
@@ -33,7 +33,7 @@
     "ress": "6.0.0",
     "use-breakpoint": "4.0.10",
     "usehooks-ts": "3.1.1",
-    "yet-another-react-lightbox": "3.33.0",
+    "yet-another-react-lightbox": "3.33.1",
     "zod": "4.6.7",
     "zod-i18n-map": "3.0.1",
     "zustand": "5.1.0"
